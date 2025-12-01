@@ -1,6 +1,7 @@
 import React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Cocktails from "./components/Cocktails";
@@ -13,6 +14,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Cocktails />
+      <Analytics />
     </main>
   );
 };
