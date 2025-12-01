@@ -1,7 +1,7 @@
 import React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Cocktails from "./components/Cocktails";
