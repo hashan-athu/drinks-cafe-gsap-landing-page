@@ -47,7 +47,21 @@ const About = () => {
         {/* Grid Imte 3 */}
         <div className="md:col-span-3">
           <div className="noisy" />
-          <img src="/images/abt3.png" alt="grid-img-3" />
+          <img src="/images/abt5.png" alt="grid-img-3" />
+        </div>
+      </div>
+
+      <div className="bottom-grid">
+        {/* Grid Imte 4 */}
+        <div className="md:col-span-8">
+          <div className="noisy" />
+          <img src="/images/abt3.png" alt="grid-img-4" />
+        </div>
+
+        {/* Grid Imte 5 */}
+        <div className="md:col-span-4">
+          <div className="noisy" />
+          <img src="/images/abt4.png" alt="grid-img-5" />
         </div>
       </div>
     </div>
