@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useRef } from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import { sliderLists } from "../constants";
 import { useGSAP } from "@gsap/react";
