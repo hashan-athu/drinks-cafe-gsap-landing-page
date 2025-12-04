@@ -2,10 +2,32 @@
 import React, { use, useRef } from "react";
 import { useState } from "react";
 import { sliderLists } from "../constants";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 
 const Menu = () => {
   const contentRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useGSAP(() => {
+    gsap.fromTo("#title", { opacity: 0 }, { opacity: 1, duration: 1 });
+    gsap.fromTo(
+      ".cocktail img",
+      { opacity: 0, xPercent: -100 },
+      { opacity: 1, xPercent: 0, duration: 1, ease: "power1.inOut" }
+    );
+    gsap.fromTo(
+      ".details h2",
+      { opacity: 0, yPercent: 100 },
+      { opacity: 1, yPercent: 0, ease: "power1.inOut" }
+    );
+    gsap.fromTo(
+      ".details p",
+      { opacity: 0, yPercent: 100 },
+      { opacity: 1, yPercent: 0, ease: "power1.inOut" }
+    );
+  }, [currentIndex]);
+
   const totalCocktails = sliderLists.length;
 
   const goToSlide = (index) => {
@@ -75,7 +97,7 @@ const Menu = () => {
           </button>
 
           <button
-            className="text-right"
+            className="text-left"
             onClick={() => goToSlide(currentIndex + 1)}
           >
             <span>{nextCocktail.name}</span>
@@ -96,15 +118,15 @@ const Menu = () => {
         </div>
 
         <div className="recipe">
-            <div ref={contentRef} className="info">
-                <p>Recipe for:</p>
-                <p id="title">{currentCocktail.name}</p>
-            </div>
+          <div ref={contentRef} className="info">
+            <p>Recipe for:</p>
+            <p id="title">{currentCocktail.name}</p>
+          </div>
 
-            <div className="details">
-                <h2>{currentCocktail.title}</h2>
-                <p>{currentCocktail.description}</p>
-            </div>
+          <div className="details">
+            <h2>{currentCocktail.title}</h2>
+            <p>{currentCocktail.description}</p>
+          </div>
         </div>
       </div>
     </section>
